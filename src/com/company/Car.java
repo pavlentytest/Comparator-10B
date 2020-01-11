@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Comparator;
 
-public class Car implements Comparator<Car> {
+public class Car {
     private int maxspeed;
     private String color;
     Car() {
@@ -20,13 +20,8 @@ public class Car implements Comparator<Car> {
     public String getColor() {
         return color;
     }
-
-   // @Override
-   // public int compareTo(Car o) {
-   //     return 0;
-  //      // 0, 1, -1
-   // }
-
+}
+class ComparatorByMaxSpeed implements Comparator<Car> {
     @Override
     public int compare(Car o1, Car o2) {
         if(o1.getMaxspeed() == o2.getMaxspeed()) {
@@ -38,3 +33,10 @@ public class Car implements Comparator<Car> {
         }
     }
 }
+class ComparatorByColor implements Comparator<Car> {
+    @Override
+    public int compare(Car o1, Car o2) {
+        return o1.getColor().compareTo(o2.getColor());
+    }
+}
+

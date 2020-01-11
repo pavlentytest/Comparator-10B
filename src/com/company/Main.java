@@ -14,10 +14,17 @@ public class Main {
         cars.add(new Car(400,"yellow"));
         cars.add(new Car(40,"green"));
 
-        Collections.sort(cars,Car.class.newInstance());
+        Collections.sort(cars,new ComparatorByMaxSpeed());
         for(Car v: cars) {
             System.out.println("Color: "+v.getColor()
                     + ", maxspeed:"+v.getMaxspeed());
         }
+
+        Collections.sort(cars,new ComparatorByColor());
+        for(Car v: cars) {
+            System.out.println("Color: "+v.getColor()
+                    + ", maxspeed:"+v.getMaxspeed());
+        }
+
     }
 }
